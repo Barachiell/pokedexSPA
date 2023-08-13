@@ -5,31 +5,34 @@ let pokemonName = "";
 function showPokeSearch() {
     main.id = "screen";
     main.innerHTML = '';
+
     let pokedexSearchpic = document.createElement('img');
     let searchInput = document.createElement('input');
-    //let seeMenu = document.createElement('button');
+
     searchInput.type = "text";
     searchInput.id = "searchinput"
     searchInput.name = "pokemonname"
     searchInput.pattern = "[A-Za-z]{2,20}"
-    //seeMenu.id= "seeMenu";
-    //seeMenu.innerText = "See Menu";
+
     pokedexSearchpic.src = "/resources/pokedexSearch.png"
     pokedexSearchpic.id = "pokesearchpic";
+
     main.appendChild(pokedexSearchpic);
     main.appendChild(searchInput);
-    //main.appendChild(seeMenu);
-    enterClicked(searchInput);
+    
+    setupEnterKeyListener(searchInput);
 }
 
 
-function enterClicked(input) {
-    input.addEventListener("keyup", function (event) {
-        if (event.key === "Enter") {
-            pokemonName = input.value;
-            window.location.hash = "#pokemon";
-        }
-    })
+function setupEnterKeyListener(input) {
+    input.addEventListener("keyup", handleKeyPress);
+}
+
+function handleKeyPress(event){
+    if (event.key === "Enter") {
+        pokemonName = event.target.value;
+        window.location.hash = "#pokemon";
+    }
 }
 
 function getPokemonName(){

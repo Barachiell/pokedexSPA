@@ -4,6 +4,7 @@ const main = document.getElementById('screen');
 function showPokemon({name,sprites,types, weight, height}){
     main.id = "screen";
     main.innerHTML = '';
+    
     let showBox = document.createElement('div');
     let pokemonHeader = document.createElement('div');
     let pokemonTypes = document.createElement('div');
@@ -16,19 +17,20 @@ function showPokemon({name,sprites,types, weight, height}){
     showBox.id = "pokemonDetails";
     pokemonHeader.id = "pokemon-name";
     pokemonTypes.id = "pokemon-types";
-    pokemonType.className = "pokemon-type";
-    pokemonTypes.innerHTML = "Type:";
     sprite.id = "pokemon-image";
     pokemonInfo.id = "pokemon-info";
-    pokemonHeader.innerHTML = name.charAt(0).toUpperCase() + name.substring(1);
+    pokemonType.className = "pokemon-type";
+    
+    sprite.src = sprites.front_default;
+    pokemonTypes.innerHTML = "Type:";
+    pokemonHeader.innerHTML = capitalizeFirstLetter(name);
     pokemonType.innerHTML = types[0].type.name;
+    pokemonInfo.innerHTML = `Weight: ${(weight/10).toFixed(1)} kg <br> <br> Height: ${height} ft`;
+    
     if(types[1]){
         divForTheTypes.innerHTML += `<div class="pokemon-type"> ${types[1].type.name} </div>`;
     }
     
-    pokemonInfo.innerHTML = `Weight: ${(weight/10).toFixed(1)} kg <br> <br> Height: ${height} ft`;
-    
-    sprite.src = sprites.front_default;
     showBox.appendChild(pokemonHeader);
     divForTheTypes.appendChild(pokemonType);
     pokemonTypes.appendChild(divForTheTypes);
@@ -36,6 +38,10 @@ function showPokemon({name,sprites,types, weight, height}){
     showBox.appendChild(pokemonInfo)
     showBox.appendChild(sprite);
     main.appendChild(showBox);
+}
+
+function capitalizeFirstLetter(string){
+    return string.charAt(0).toUpperCase() + string.substring(1);
 }
 
 

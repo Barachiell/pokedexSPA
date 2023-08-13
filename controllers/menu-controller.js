@@ -14,37 +14,27 @@ Gen9 = 906 - 1010 (in theory is more than 1015 but the API only goes until 1010)
 */
 
 function init() {
-    switch (getGenerationId()) {
-        case "gen1":
-            fetchAll(showMenu, 1, 151);
-            break;
-        case "gen2":
-            fetchAll(showMenu, 152, 251);
-            break;
-        case "gen3":
-            fetchAll(showMenu, 252, 386);
-            break;
-        case "gen4":
-            fetchAll(showMenu, 387, 493);
-            break;
-        case "gen5":
-            fetchAll(showMenu, 494, 649);
-            break;
-        case "gen6":
-            fetchAll(showMenu, 650, 721);
-            break;
-        case "gen7":
-            fetchAll(showMenu, 722, 809);
-            break;
-        case "gen8":
-            fetchAll(showMenu, 810, 905);
-            break;
-        case "gen9":
-            fetchAll(showMenu, 906, 1010);
-            break;
-    }
-}
 
+    const generationRanges = {
+        "gen1":[1,151],
+        "gen2":[152,251],
+        "gen3":[252,386],
+        "gen4":[387,493],
+        "gen5":[494,649],
+        "gen6":[650,721],
+        "gen7":[722,809],
+        "gen8":[810,905],
+        "gen9":[906,1010] //(in theory is more than 1015 but the API only goes until 1010)
+    }
+
+    let generationId = getGenerationId();
+    let range = generationRanges[generationId];
+
+    if(range){
+        fetchAll(showMenu, range[0], range[1]);
+    }
+
+}
 
 export default {
     init
