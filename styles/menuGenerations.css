@@ -17,18 +17,23 @@
     margin: 20px;
     font-size: 16px; /* Slightly smaller font size */ /* Adjust padding for better vertical alignment */
     width: calc(30% - 70px); /* Adjust width calculation for padding */
-    border: none;
+    border-style: groove;
     background-color: #3498db;
     color: #fff;
     border-radius: 2em;
     cursor: pointer;
     transition: transform 0.2s, background-color 0.2s, box-shadow 0.2s; /* Slightly faster transitions */
+    box-shadow:
+    inset 0 -0.0625em 0.125em rgba(0, 0, 0, 0.75),
+    inset 0 0.125em 0.125em -0.0625em rgba(255, 255, 255, 0.4),
+    0 0 0.03125em 0.0625em rgba(0, 0, 0, 0.6),
+    0 0.0625em 0.25em 0.03125em rgba(0, 0, 0, 0.5);
 }
 
 .generation-buttons div:hover {
     background-color: #2c82c9;
     transform: translateY(-2px); /* Use translateY for vertical shift */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adjust box shadow */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1),/* Adjust box shadow */
 }
 
 .generation-buttons div:active {

@@ -7,7 +7,7 @@ let pokemonNameFromSprite = "";
 let generationId = "";
 
 function showMenu({name,sprites}){
-    let sprite = createSprite(name, sprite.front_default);
+    let sprite = createSprite(name, sprites.front_default);
     pokemonSprites.appendChild(sprite);
     main.appendChild(pokemonSprites);
     spriteClick(sprite, "#pokemon")

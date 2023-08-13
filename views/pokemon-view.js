@@ -25,10 +25,11 @@ function showPokemon({name,sprites,types, weight, height}){
     pokemonTypes.innerHTML = "Type:";
     pokemonHeader.innerHTML = capitalizeFirstLetter(name);
     pokemonType.innerHTML = types[0].type.name;
+    pokemonType.id = types[0].type.name;
     pokemonInfo.innerHTML = `Weight: ${(weight/10).toFixed(1)} kg <br> <br> Height: ${height} ft`;
     
     if(types[1]){
-        divForTheTypes.innerHTML += `<div class="pokemon-type"> ${types[1].type.name} </div>`;
+        divForTheTypes.innerHTML += `<div class="pokemon-type" id="${types[1].type.name}"> ${types[1].type.name} </div>`;
     }
     
     showBox.appendChild(pokemonHeader);
