@@ -1,0 +1,56 @@
+
+.generation-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    height: 100%;
+    margin: 10px;
+    border-radius: 0.5em;
+    border: 1px solid #ccc; /* Add border color */
+    overflow: hidden; /* Hide overflow from button shadows */
+}
+
+.generation-buttons div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    font-size: 16px; /* Slightly smaller font size */ /* Adjust padding for better vertical alignment */
+    width: calc(30% - 70px); /* Adjust width calculation for padding */
+    border: none;
+    background-color: #3498db;
+    color: #fff;
+    border-radius: 2em;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s, box-shadow 0.2s; /* Slightly faster transitions */
+}
+
+.generation-buttons div:hover {
+    background-color: #2c82c9;
+    transform: translateY(-2px); /* Use translateY for vertical shift */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adjust box shadow */
+}
+
+.generation-buttons div:active {
+    transform: translateY(2px); /* Adjust active state shift */
+    box-shadow: none; /* Remove box shadow on active state */
+}
+
+#pokemonSprites {
+    display: flex;
+    overflow-y: auto;
+    flex-wrap: wrap;
+    height: auto;
+    gap: 10px;
+    /* Adjust the gap between images */
+    justify-content: flex-start;
+    /* Start from the left side */
+    align-content: flex-start;
+    /* Start from the top */
+}
+
+#pokemonSprites img {
+    width: calc(16.666% - 10px);
+    /* Each image takes up roughly one-sixth of the container width with some gap */
+    /* Add more styles as needed for individual images */
+}

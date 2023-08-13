@@ -14,7 +14,7 @@ function showPokeSearch() {
     searchInput.pattern = "[A-Za-z]{2,20}"
     //seeMenu.id= "seeMenu";
     //seeMenu.innerText = "See Menu";
-    pokedexSearchpic.src = "/resources/pokedexSearch.jpeg"
+    pokedexSearchpic.src = "/resources/pokedexSearch.png"
     pokedexSearchpic.id = "pokesearchpic";
     main.appendChild(pokedexSearchpic);
     main.appendChild(searchInput);

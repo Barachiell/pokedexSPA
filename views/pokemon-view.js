@@ -10,25 +10,28 @@ function showPokemon({name,sprites,types, weight, height}){
     let pokemonType = document.createElement('div');
     let sprite = document.createElement("img");
     let pokemonInfo = document.createElement('div');
+    let divForTheTypes = document.createElement('div');
 
+    divForTheTypes.id = "div-for-the-types";
     showBox.id = "pokemonDetails";
     pokemonHeader.id = "pokemon-name";
     pokemonTypes.id = "pokemon-types";
-    pokemonType.id = "pokemon-type";
+    pokemonType.className = "pokemon-type";
     pokemonTypes.innerHTML = "Type:";
     sprite.id = "pokemon-image";
     pokemonInfo.id = "pokemon-info";
     pokemonHeader.innerHTML = name.charAt(0).toUpperCase() + name.substring(1);
     pokemonType.innerHTML = types[0].type.name;
     if(types[1]){
-        pokemonType.innerHTML += "<br> <br>" + types[1].type.name;
+        divForTheTypes.innerHTML += `<div class="pokemon-type"> ${types[1].type.name} </div>`;
     }
     
-    pokemonInfo.innerHTML = `Weight: ${weight} kg <br> <br> Height: ${height} ft`;
+    pokemonInfo.innerHTML = `Weight: ${(weight/10).toFixed(1)} kg <br> <br> Height: ${height} ft`;
     
     sprite.src = sprites.front_default;
     showBox.appendChild(pokemonHeader);
-    pokemonTypes.appendChild(pokemonType);
+    divForTheTypes.appendChild(pokemonType);
+    pokemonTypes.appendChild(divForTheTypes);
     showBox.appendChild(pokemonTypes);
     showBox.appendChild(pokemonInfo)
     showBox.appendChild(sprite);

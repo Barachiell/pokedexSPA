@@ -2,6 +2,7 @@ import homeController from "./controllers/home-controller.js";
 import pokemonController from "./controllers/pokemon-controller.js";
 import pokedexSearchController from "./controllers/pokedexsearch-controller.js"
 import menuController from "./controllers/menu-controller.js"
+import generationsController from "./controllers/generations-controller.js"
 
 //dinamic- polimorphism
 const routes = {
@@ -20,6 +21,10 @@ const routes = {
     menu:{
         hash:'#pokemonMenu',
         controller:menuController 
+    },
+    generations:{
+        hash:'#pokemonGenerations',
+        controller:generationsController 
     }
 }
 

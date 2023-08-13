@@ -1,0 +1,82 @@
+
+/* Pokedex container */
+#pokemonDetails {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 20px;
+    border: 3px solid #ddd;
+    border-radius: 10px;
+    background-color: #f5f5f5;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 10px;
+    height: 100%;
+}
+
+/* Pokemon image */
+#pokemon-image {
+    position: absolute;
+    right: 25px;
+    width: 200px;
+    top: 20px;
+    height: auto;
+}
+
+/* Pokemon details container */
+#pokemon-details {
+    flex: 1;
+    padding: 0 20px;
+   
+}
+
+/* Pokemon name */
+#pokemon-name {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    
+}
+
+/* Pokemon types */
+#pokemon-types {
+    font-size: 20px;
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+  
+}
+
+#div-for-the-types{
+    display: flex;
+    flex-direction: column;
+}
+
+.pokemon-type {
+    padding: 0px 18px 20px;
+    /*border: solid;
+    border-radius: 1em;
+    background-color: rgba(172, 163, 163, 0.774); */
+}
+
+/* Pokemon weight and attacks */
+#pokemon-info {
+    font-size: 16px; 
+}
+
+/*
+#pokemonDetails {
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+    padding: 20px;
+    border: 0.2em solid;
+    border-style: double;
+    border-radius: 0.2em;
+    height: 100%;
+}
+
+#pokemonDetails img {
+    justify-content: end;
+} */

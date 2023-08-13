@@ -27,7 +27,7 @@ function creatingHomeScreen() {
     onClick(aButton, "pokedexsearch");
 
     let xButton = document.getElementById("xbutton");
-    onClick(xButton, "pokemonMenu");
+    onClick(xButton, "pokemonGenerations");
 
     let homeButton = document.getElementById("homeButton");
     onClick(homeButton, "#home");
@@ -38,6 +38,7 @@ function onClick(button, hash) {
     if(button.id === "xbutton"){
         button.onclick = function(){
             main.id="screen";
+            main.innerHTML = "";
             window.location.hash = hash;
         }
     } else {
